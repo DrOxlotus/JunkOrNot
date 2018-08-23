@@ -16,7 +16,6 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 	itemName = lower(itemName);
 
 	for k, v in pairs(items) do
-		--k = lower(k);
 		if (type(k) == "string") then
 			k = lower(k);
 		end
