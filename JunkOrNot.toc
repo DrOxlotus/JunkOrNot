@@ -1,0 +1,8 @@
+## Author: Oxlotus-Area 52
+## Interface: 80000
+## Title: Junk Or Not
+## Name: Junk Or Not
+## Notes: Appends a one-line note to remind the player whether they should "Keep" or "Sell" an item.
+## Version 1.0.0
+Keys.lua
+JunkOrNot.lua
