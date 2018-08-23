@@ -14,7 +14,9 @@ local items = {
     -- Artifacts
     ["Fists of the Heavens"] = keep,
     ["Fu Zan, the Wanderer\'s Companion"] = keep,
+    ["Heart of Azeroth"] = keep,
     ["Sheilun, Staff of the Mists"] = keep,
+    ["Underlight Angler"] = keep,
     -- Currencies
     ["Trial of Style Token"] = keep,
     -- Helpful Items
