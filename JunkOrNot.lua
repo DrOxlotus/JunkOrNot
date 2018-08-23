@@ -13,8 +13,6 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 
 	local _, _, _, _, _, itemType = GetItemInfo(itemLink);
 
-	if itemType ~= "Armor" and itemType ~= "Weapon" then return; end
-
 	itemName = lower(itemName);
 
 	for k, v in pairs(items) do
