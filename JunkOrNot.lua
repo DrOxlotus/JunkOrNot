@@ -16,7 +16,10 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 	itemName = lower(itemName);
 
 	for k, v in pairs(items) do
-		k = lower(k);
+		--k = lower(k);
+		if (type(k) == "string") then
+			k = lower(k);
+		end
 		if (k == tonumber(itemID)) then
 			tooltip:AddLine("Junk Or Not: " .. v);
 		elseif string.find(itemName, format("^%s", k)) then
