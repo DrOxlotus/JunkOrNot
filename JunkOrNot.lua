@@ -28,3 +28,10 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 end
 
 GameTooltip:HookScript("OnTooltipSetItem", GameTooltip_OnTooltipSetItem);
+
+--[[
+TODO: Test placing item ID in the tooltip.
+TODO: Finish converting the DB from names to IDs.
+TODO: Implement "keep reasons".
+TODO: Pull all items from Blizzard's API instead of manual entry.
+]]

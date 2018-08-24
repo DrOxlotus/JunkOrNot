@@ -1,8 +1,8 @@
 local JunkOrNot, namespace = ...;
 local reasons = {
-  1, "This is a holiday currency, which are used to purchase holiday-only items.", -- Holiday currencies
-  2, "This is a mount.",
-  3, "This is a pet.",
+  [1], "This is a mount, pet, or toy.",
+  [2], "This item can no longer be obtained.",
+  [3], "",
 };
 
 namespace.reasons = reasons;
