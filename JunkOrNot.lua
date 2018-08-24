@@ -1,37 +1,34 @@
-local JunkOrNot, namespace = ...;
+--------------------------------------------------------------------------------
+--                           J U N K   O R   N O T                         		--
+--------------------------------------------------------------------------------
+--               		Copyright 2018 Alex Metz (Oxlotus-Area 52)              	--
+--------------------------------------------------------------------------------
+local JunkOrNot, ns = ...;
+local databases = {
+	[1] = ns.artifacts,
+	[2] = ns.mounts,
+};
 
-local lower = string.lower;
-local format = string.format;
-
-local items = namespace.items;
-local reasons = namespace.reasons;
-
-local function GameTooltip_OnTooltipSetItem(tooltip)
+local function AddToTooltip(tooltip)
 	local itemName, itemLink = tooltip:GetItem();
 	if not itemName or not itemLink then return; end
 
-	local _, _, _, _, itemID, _, _,
-	_, _, _, _, _, _, _, _ = string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?");
+	local _, _, _, _, itemID, _, _, _, _, _, _, _, _, _, _ = string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?");
 
-	itemName = lower(itemName);
-
-	for k, v in pairs(items) do
-		if (type(k) == "string") then
-			k = lower(k);
-		end
-		if (k == tonumber(itemID)) then
-			tooltip:AddLine("Junk Or Not: " .. v);
-		elseif string.find(itemName, format("^%s", k)) then
-			tooltip:AddLine("Junk Or Not: " .. v);
+	for i, j in pairs(databases) do
+		for k, v in pairs(j) do
+			if (k == tonumber(itemID)) then
+				tooltip:AddLine("Junk Or Not: " .. v);
+			end
 		end
 	end
 end
 
-GameTooltip:HookScript("OnTooltipSetItem", GameTooltip_OnTooltipSetItem);
+GameTooltip:HookScript("OnTooltipSetItem", AddToTooltip);
 
 --[[
 TODO: Test placing item ID in the tooltip.
-TODO: Finish converting the DB from names to IDs.
+TODO: Separate items into separate category files.
 TODO: Implement "keep reasons".
 TODO: Pull all items from Blizzard's API instead of manual entry.
 ]]
