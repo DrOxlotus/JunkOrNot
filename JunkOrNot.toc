@@ -4,5 +4,5 @@
 ## Name: Junk Or Not
 ## Notes: Appends a one-line note to remind you whether you should "Keep" or "Sell" an item.
 ## Version 1.0.0
-Keys.lua
+Items.lua
 JunkOrNot.lua
