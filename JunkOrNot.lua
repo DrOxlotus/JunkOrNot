@@ -25,10 +25,3 @@ local function AddToTooltip(tooltip)
 end
 
 GameTooltip:HookScript("OnTooltipSetItem", AddToTooltip);
-
---[[
-TODO: Test placing item ID in the tooltip.
-TODO: Separate items into separate category files.
-TODO: Implement "keep reasons".
-TODO: Pull all items from Blizzard's API instead of manual entry.
-]]
